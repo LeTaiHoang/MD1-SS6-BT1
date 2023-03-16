@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[V2.0][Bài tập] 1. Tính chỉ số cân nặng của cơ thể
+    </title>
+</head>
+<body>
+<label>Nhập cân nặng của bạn:</label>
+<input type="text" id="inputweigth"><br>
+<label>Nhập chiều cao của bạn:</label>
+<input type="text" id="inputheigth">
+<button onclick="tinhChiSo()" >Tính chỉ số BMI </button>
+<br>
+<h1 id="chisoBMI"></h1><span id="show"></span>
+
+<script>
+    function tinhChiSo() {
+        let weigth = +document.getElementById('inputweigth').value;
+        let heigth = +document.getElementById('inputheigth').value;
+        let bmi = weigth/(heigth*2);
+        document.getElementById('chisoBMI').innerHTML = 'Chỉ số BMI của bạn là:' +bmi;
+
+        if (bmi < 18) {
+            document.getElementById('show').innerHTML = 'Underweigth : Thiếu cân'
+        } else if (bmi < 25.0) {
+            document.getElementById('show').innerHTML ='Normal : Bình thường'
+        } else if (bmi < 30.0) {
+            document.getElementById('show').innerHTML ='Overweight:Thừa cân'
+        } else {
+            document. getElementById('show').innerHTML ='Obese:Béo phì'
+        }
+    }
+</script>
+</body>
+
+</html>
